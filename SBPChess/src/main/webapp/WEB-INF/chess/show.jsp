@@ -1,16 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Film Details</title>
+<title>Chess</title>
 </head>
 <body>
-<div>
-  <h5>${chess.player} (${chess.opponent})</h5> <!-- expression language to display -->
-  <p>${chess.playerColor}</p>
-  
-</div>
+	<div>
+		<h2>Chess Game Results</h2>
+		<ul>
+			<li>${chess.id}</li>
+			<li>${chess.player}</li>
+			<li>${chess.opponent}</li>
+			<li>${chess.playerColor}</li>
+			<li>${chess.location}</li>
+			<li>${chess.outcome}</li>
+		</ul>
+	</div>
 </body>
 </html>

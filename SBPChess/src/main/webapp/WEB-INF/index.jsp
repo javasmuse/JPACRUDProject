@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Film Lookup</title>
+<title>Chess Game Tracker</title>
 </head>
 <body>
 	<form action="getChess.do" method="GET">
-		Film ID: <input type="text" name="cid" /> <input type="submit"
+	Chess Game ID <input type="text" name="cid" /> <input type="submit"
 			value="Show Chess" />
 	</form>
 	<ul>

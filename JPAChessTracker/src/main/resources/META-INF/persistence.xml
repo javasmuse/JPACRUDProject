@@ -9,7 +9,7 @@
     </provider>
 
 <!-- entities here -->
-<class>com.skilldistillery.jpavideostore.entities.Actor</class>
+<class>com.skilldistillery.chess.entities.Chess</class>
 
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/chessdb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />

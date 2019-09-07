@@ -1,5 +1,7 @@
 package com.skilldistillery.bootmvc.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,27 +19,23 @@ public class ChessController {
 	@Autowired
 	private ChessDAO chessDAO; 
 	
-	@RequestMapping(path = "getChess.do", method = RequestMethod.GET)
-	public ModelAndView getChess(@RequestParam("cid") int cid) { 
-		ModelAndView mv = new ModelAndView();
-		
-		Chess chess = chessDAO.findById(cid);
-		mv.addAllObjects("chess", chess);
-		mv.setViewName("WEB-INF/chess/show.jsp");
-		return mv
+	@RequestMapping(path = "/", method = RequestMethod.GET)
+	public String index(Model model) {
+		List<Chess> chess = chessDAO.findAll(); 
+		model.addAttribute("chess", chess);
+		return "index"; 
 	}
 	
-	@RequestMapping(path ="/")
-	public String index() {
-		return "WEB-INF/index.jsp"; 
-	}
-	
-	@RequestMapping(path = "getFilm.do")
-	public String showChess(@RequestParam("cid") Integer cid, Model model) {
+	@RequestMapping(path = "getChess.do")
+	public ModelAndView showChess(@RequestParam("cid") Integer cid) {
 		Chess c = chessDAO.findById(cid);
-		model.addAttribute("chess", c);
+		ModelAndView mv = new ModelAndView(); 
+		mv.addObject("chess", c );
+		mv.setViewName("chess/show");
+		return mv;
+		
 //		return "WEB-INF/film/show.jsp";  // could be ModelAndView, choices
-		return "chess/show";
+//		return "chess/show";
 	}
 
 }
