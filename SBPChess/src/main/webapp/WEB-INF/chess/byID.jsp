@@ -5,12 +5,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Search by ID</title>
 </head>
 <body>
 	<h3>
 		<a href="/">Back to the Home Page</a>
 	</h3>
+	
+	
+	<form action="getFilm.do" method="GET">
+		Film ID: <input type="text" name="fid" /> <input type="submit"
+			value="Show Film" />
+	</form>
+	
+Chess Game ID <input type="number" name="cid" /> <input type="submit" value="Show Game" />
+			
+			
+			
+			
+
+
+
 
 </body>
 </html>

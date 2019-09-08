@@ -14,7 +14,7 @@
 
 	Chess Game ID
 	<form action="updateGameP1.do" method="GET">
-		Film ID: <input type="text" name="cid" /> <input type="submit"
+		Game ID: <input type="text" name="cid" /> <input type="submit"
 			value="Show Game" />
 	</form>
 	

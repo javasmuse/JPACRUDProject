@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add a Game</title>
+<title>Error</title>
 </head>
 <body>
 <h3>

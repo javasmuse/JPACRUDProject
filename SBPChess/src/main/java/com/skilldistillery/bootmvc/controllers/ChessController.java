@@ -30,13 +30,33 @@ public class ChessController {
 	}
 
 	@RequestMapping(path = "getChess.do")
-	public ModelAndView showChess(@RequestParam("cid") Integer cid) {
+	public String showChess(@RequestParam("cid") Integer cid, Model model) {
 		Chess c = chessDAO.findById(cid); // finding games by id
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("chess", c);
-		mv.setViewName("chess/show");
-		return mv;
+		model.addAttribute("chess", c);
+		return "chess/show";
 	}
+	
+	@RequestMapping(path = "searchGames.do")
+	public String searchGame() {
+		return "chess/searchBy";
+	}
+	
+	@RequestMapping(path = "byPlayer.do")
+	public String byPlayer() {
+		return "chess/byPlayerName";
+	}
+	
+	@RequestMapping(path = "byID.do")
+	public String byID() {
+		return "chess/byID";
+	}
+	
+	@RequestMapping(path = "byAll.do")
+	public String showAll() {
+		return "chess/show ";
+	}
+	
+	
 
 	@RequestMapping(path = "addChessGame.do")
 	public String addNew() {
@@ -90,7 +110,7 @@ public class ChessController {
 	public String updateGameP2(@RequestParam("cid") Integer cid, Chess chess, Model model) {
 		Chess upChess = chessDAO.update(cid, chess); 
 		model.addAttribute("upChess", upChess);
-		return "chess/details";
+		return "chess/updatedDetails";
 	}
 }
 

@@ -5,12 +5,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Search by Location</title>
 </head>
 <body>
 	<h3>
 		<a href="/">Back to the Home Page</a>
 	</h3>
+
+<ul>
+		<c:forEach items="${chess }" var="chessdb">
+			<li><a href="getChess.do?cid=${chessdb.id}">${chessdb.player}</li>
+		</c:forEach>
+	</ul>
+
+
+
+
+
 
 </body>
 </html>

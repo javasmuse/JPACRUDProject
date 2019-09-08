@@ -14,13 +14,13 @@
 			<a href="/">Back to the Home Page</a>
 		</h3>
 		<h2>Chess Game Results</h2>
-		<ul>
-			<li>${chess.id}</li>
-			<li>${chess.player}</li>
-			<li>${chess.opponent}</li>
-			<li>${chess.playerColor}</li>
-			<li>${chess.location}</li>
-			<li>${chess.outcome}</li>
+		<ul style="list-style: none;">
+			<li>Game ID:.........${chess.id}</li>
+			<li>Player:..........${chess.player}</li>
+			<li>Opponent:........${chess.opponent}</li>
+			<li>Player's Color:..${chess.playerColor}</li>
+			<li>Location:........${chess.location}</li>
+			<li>Outcome:.........${chess.outcome}</li>
 		</ul>
 	</div>
 </body>

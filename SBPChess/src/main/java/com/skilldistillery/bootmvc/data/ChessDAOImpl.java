@@ -62,4 +62,7 @@ public class ChessDAOImpl implements ChessDAO {
 		return !status;
 	}
 
+
+
+
 }

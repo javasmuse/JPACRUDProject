@@ -7,7 +7,7 @@ import com.skilldistillery.chess.entities.Chess;
 public interface ChessDAO {
 
 	Chess findById(int id);
- 
+	 
 	List<Chess> findAll(); 
 	
 	public Chess createNewGame(Chess chee);

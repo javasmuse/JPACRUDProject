@@ -5,12 +5,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Search Games</title>
 </head>
 <body>
 	<h3>
 		<a href="/">Back to the Home Page</a>
 	</h3>
 
+	 <form action="getChess.do" method="GET">
+		Chess Game ID: <input type="text" name="cid" /> <input type="submit"
+			value="Show Game" />
+	</form>
+	
+	
+	
+	
+
+	
 </body>
 </html>

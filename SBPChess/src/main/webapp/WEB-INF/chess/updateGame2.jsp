@@ -31,7 +31,7 @@
 				<input type="text" name="outcome" value="${chess.location}">
 				<input type="text" name="location" value="${chess.outcome}">
 				<br>
-		Verify Game ID (not changable): 
+		Verify Game ID (not changeable): 
 		<input type="text" name="cid" /> <input type="submit"
 			value="Submit" />
 			</form>
