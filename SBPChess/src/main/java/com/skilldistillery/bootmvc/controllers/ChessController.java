@@ -18,33 +18,33 @@ import com.skilldistillery.chess.entities.Chess;
 
 @Controller
 public class ChessController {
-	
+
 	@Autowired
-	private ChessDAO chessDAO; 
-	
+	private ChessDAO chessDAO;
+
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public String index(Model model) {
-		List<Chess> chess = chessDAO.findAll(); 
+		List<Chess> chess = chessDAO.findAll();
 		model.addAttribute("chess", chess);
-		return "index"; 
+		return "index";
 	}
-	
+
 	@RequestMapping(path = "getChess.do")
 	public ModelAndView showChess(@RequestParam("cid") Integer cid) {
 		Chess c = chessDAO.findById(cid); // finding games by id
-		ModelAndView mv = new ModelAndView(); 
-		mv.addObject("chess", c );
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("chess", c);
 		mv.setViewName("chess/show");
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "addChessGame.do")
 	public String addNew() {
-		return "chess/addChessGame"; 
+		return "chess/addChessGame";
 	}
-	
+
 	@RequestMapping(path = "addGame.do", method = RequestMethod.POST)
-	public String addGame(@Valid Chess chess, Errors errors, Model model) { 
+	public String addGame(@Valid Chess chess, Errors errors, Model model) {
 		Chess newChess;
 		if (errors.getErrorCount() != 0) {
 			return "chess/addChessError";
@@ -52,22 +52,30 @@ public class ChessController {
 		newChess = chessDAO.createNewGame(chess);
 		model.addAttribute("newChess", newChess);
 		return "chess/details";
+
 	}
-	}
-		
-//	@RequestMapping(path = "deleteChess.do", method= RequestMethod.GET)
-//	public ModelAndView deleteChess(@RequestParam("cid") Integer cid) {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("chess/delete");
-//		return mv;
-//	}
-		
 	
-		
+	@RequestMapping(path= "delete.do")
+	public String deleteGame() {
+		return "chess/deleteGame"; 
+	}
+
+	@RequestMapping(path = "deleteChess.do", method = RequestMethod.GET)
+	public String deleteChess(@RequestParam("cid") Integer cid, Model model) {
+		boolean isDeleted = chessDAO.destroy(cid);
+		if (isDeleted) {
+			model.addAttribute("isDeleted", isDeleted);
+			return "chess/deleteSuccess";
+		} else {
+			return "chess/deleteError";
+		}
+	}
+
+	@RequestMapping(path = "view.do", methods = RequestMethod.GET)
+	public String viewChoices.do() {
+		return "chess/viewChoices";
+	}
+}
+
 //		return "WEB-INF/film/show.jsp";  // could be ModelAndView, choices
 //		return "chess/show";
-	
-
-
-
-
