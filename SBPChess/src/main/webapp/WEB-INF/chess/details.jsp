@@ -12,7 +12,7 @@
 	<h3>
 		<a href="/">Back to the Home Page</a>
 	</h3>
-	<h2>Your Added Game</h2>
+	<h2>Your Game</h2>
 	<c:choose>
 		<c:when test="${! empty chess.id}">
 			<h2>Game Number:</h2> ${chess.id}
@@ -25,7 +25,7 @@
 			</ul>
 		</c:when>
 		<c:otherwise>
-			<h3>Not Added, an Error Occurred</h3>
+			<h3>Not Added or Updated, an Error Occurred</h3>
 		</c:otherwise>
 	</c:choose>
 

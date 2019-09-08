@@ -39,7 +39,7 @@
 	<h3>R</h3>
 	<a href="addChessGame.do">Read a Chess Game / Search for a Game</a> 
 	<h3>U</h3>
-	<a href="addChessGame.do">Update a Chess Game</a> 
+	<a href="updateGame.do">Update a Chess Game</a> 
 	<h3>D</h3>
 	<a href="delete.do">Delete a Chess Game</a> 
 

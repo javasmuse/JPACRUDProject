@@ -70,12 +70,27 @@ public class ChessController {
 			return "chess/deleteError";
 		}
 	}
+	
+	@RequestMapping(path= "updateGame.do")
+	public String update() {
+		return "chess/updateGame"; 
+	}
 
-	@RequestMapping(path = "view.do", methods = RequestMethod.GET)
-	public String viewChoices.do() {
-		return "chess/viewChoices";
+	@RequestMapping(path = "updateGameP1.do")
+	public ModelAndView gametoUpdate(@RequestParam("cid") Integer cid) {
+		Chess c = chessDAO.findById(cid); // finds a game by id and displays
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("chess", c);
+		mv.addObject("cid", cid);
+		mv.setViewName("chess/updateGame2");
+		return mv;
+	}
+	
+	@RequestMapping(path ="updateGameP2.do", method = RequestMethod.POST)
+	public String updateGameP2(@RequestParam("cid") Integer cid, Chess chess, Model model) {
+		Chess upChess = chessDAO.update(cid, chess); 
+		model.addAttribute("upChess", upChess);
+		return "chess/details";
 	}
 }
 
-//		return "WEB-INF/film/show.jsp";  // could be ModelAndView, choices
-//		return "chess/show";
