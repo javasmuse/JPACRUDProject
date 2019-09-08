@@ -10,6 +10,9 @@
 </head>
 <body>
 	<div>
+		<h3>
+			<a href="/">Back to the Home Page</a>
+		</h3>
 		<h2>Chess Game Results</h2>
 		<ul>
 			<li>${chess.id}</li>

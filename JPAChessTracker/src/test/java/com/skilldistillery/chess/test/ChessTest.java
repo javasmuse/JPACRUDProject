@@ -1,6 +1,6 @@
-package com.skilldistillery.chess.entities;
+package com.skilldistillery.chess.test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,6 +11,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.skilldistillery.chess.entities.Chess;
 
 class ChessTest {
 	
@@ -42,8 +44,8 @@ class ChessTest {
 	}
 
 	@Test
-	void test_Chess_entity_mapping() {
-		assertNotNull(chess);
+	void testLocationCheckadd() {
+		assertEquals("Marco Island", chess.getLocation());
 	}
 
 }

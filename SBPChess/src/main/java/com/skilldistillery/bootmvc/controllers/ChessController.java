@@ -2,9 +2,12 @@ package com.skilldistillery.bootmvc.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,16 +31,43 @@ public class ChessController {
 	
 	@RequestMapping(path = "getChess.do")
 	public ModelAndView showChess(@RequestParam("cid") Integer cid) {
-		Chess c = chessDAO.findById(cid);
+		Chess c = chessDAO.findById(cid); // finding games by id
 		ModelAndView mv = new ModelAndView(); 
 		mv.addObject("chess", c );
 		mv.setViewName("chess/show");
 		return mv;
+	}
+	
+	@RequestMapping(path = "addChessGame.do")
+	public String addNew() {
+		return "chess/addChessGame"; 
+	}
+	
+	@RequestMapping(path = "addGame.do", method = RequestMethod.POST)
+	public String addGame(@Valid Chess chess, Errors errors, Model model) { 
+		Chess newChess;
+		if (errors.getErrorCount() != 0) {
+			return "chess/addChessError";
+		}
+		newChess = chessDAO.createNewGame(chess);
+		model.addAttribute("newChess", newChess);
+		return "chess/details";
+	}
+	}
+		
+//	@RequestMapping(path = "deleteChess.do", method= RequestMethod.GET)
+//	public ModelAndView deleteChess(@RequestParam("cid") Integer cid) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("chess/delete");
+//		return mv;
+//	}
+		
+	
 		
 //		return "WEB-INF/film/show.jsp";  // could be ModelAndView, choices
 //		return "chess/show";
-	}
+	
 
-}
+
 
 
