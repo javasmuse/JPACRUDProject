@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EntityScan("com.skilldistillery.chess.entities")
-@ComponentScan(basePackages="com.skilldistillery.bootmvc")
+@ComponentScan(basePackages = "com.skilldistillery.bootmvc")
 public class ChessApplication {
 
 	public static void main(String[] args) {

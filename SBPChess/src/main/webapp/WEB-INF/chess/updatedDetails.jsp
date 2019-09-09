@@ -10,7 +10,7 @@
 <body>
 
 	<h3>
-		<a href="/">Back to the Home Page</a>
+		<a href="/">Main Menu</a>
 	</h3>
 	<h2>Your Updated Game</h2>
 	<c:choose>

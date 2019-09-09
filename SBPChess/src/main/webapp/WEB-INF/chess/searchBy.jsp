@@ -9,18 +9,18 @@
 </head>
 <body>
 	<h3>
-		<a href="/">Back to the Home Page</a>
+		<a href="/">Main Menu</a>
 	</h3>
 
-	 <form action="getChess.do" method="GET">
-		Chess Game ID: <input type="text" name="cid" /> <input type="submit"
+	<form action="getChess.do" method="GET">
+		Chess Game ID: <input type="number" name="cid" /> <input type="submit"
 			value="Show Game" />
 	</form>
-	
-	
-	
-	
 
-	
+
+
+
+
+
 </body>
 </html>

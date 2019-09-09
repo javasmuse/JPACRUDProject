@@ -35,28 +35,26 @@ public class ChessController {
 		model.addAttribute("chess", c);
 		return "chess/show";
 	}
-	
+
 	@RequestMapping(path = "searchGames.do")
 	public String searchGame() {
 		return "chess/searchBy";
 	}
-	
+
 	@RequestMapping(path = "byPlayer.do")
 	public String byPlayer() {
 		return "chess/byPlayerName";
 	}
-	
+
 	@RequestMapping(path = "byID.do")
 	public String byID() {
 		return "chess/byID";
 	}
-	
+
 	@RequestMapping(path = "byAll.do")
 	public String showAll() {
 		return "chess/show ";
 	}
-	
-	
 
 	@RequestMapping(path = "addChessGame.do")
 	public String addNew() {
@@ -74,14 +72,21 @@ public class ChessController {
 		return "chess/details";
 
 	}
-	
-	@RequestMapping(path= "delete.do")
+
+	@RequestMapping(path = "delete.do")
 	public String deleteGame() {
-		return "chess/deleteGame"; 
+		return "chess/deleteGame";
 	}
 
 	@RequestMapping(path = "deleteChess.do", method = RequestMethod.GET)
 	public String deleteChess(@RequestParam("cid") Integer cid, Model model) {
+		Chess c = chessDAO.findById(cid); // finding games by id
+		model.addAttribute("chess", c);
+		return "chess/deleteCertain";
+	}		
+	
+	@RequestMapping(path = "deleteChess2.do", method = RequestMethod.GET)
+	public String deleteChessCertain(@RequestParam("cid") Integer cid, Model model) {
 		boolean isDeleted = chessDAO.destroy(cid);
 		if (isDeleted) {
 			model.addAttribute("isDeleted", isDeleted);
@@ -91,9 +96,9 @@ public class ChessController {
 		}
 	}
 	
-	@RequestMapping(path= "updateGame.do")
+	@RequestMapping(path = "updateGame.do")
 	public String update() {
-		return "chess/updateGame"; 
+		return "chess/updateGame";
 	}
 
 	@RequestMapping(path = "updateGameP1.do")
@@ -105,12 +110,11 @@ public class ChessController {
 		mv.setViewName("chess/updateGame2");
 		return mv;
 	}
-	
-	@RequestMapping(path ="updateGameP2.do", method = RequestMethod.POST)
+
+	@RequestMapping(path = "updateGameP2.do", method = RequestMethod.POST)
 	public String updateGameP2(@RequestParam("cid") Integer cid, Chess chess, Model model) {
-		Chess upChess = chessDAO.update(cid, chess); 
+		Chess upChess = chessDAO.update(cid, chess);
 		model.addAttribute("upChess", upChess);
 		return "chess/updatedDetails";
 	}
 }
-

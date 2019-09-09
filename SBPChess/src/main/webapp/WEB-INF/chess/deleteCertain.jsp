@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chess</title>
+<title>Delete</title>
 </head>
 <body>
 	<div>
 		<h3>
 			<a href="/">Main Menu</a>
 		</h3>
-		<h2>Chess Game Results</h2>
+		<h2>Chess Game to be Deleted</h2>
 		<c:choose>
 			<c:when test="${! empty chess.id }">
 
@@ -25,9 +25,19 @@
 					<li>Location:........${chess.location}</li>
 					<li>Outcome:.........${chess.outcome}</li>
 				</ul>
+
+
+				<form action="deleteChess2.do" method="GET">
+
+					<h4>Are you sure you want to delete this game?</h4>
+					
+					<input type="submit" value="Delete" />				
+					<input type="hidden" name="cid" value="${chess.id }"/> 	
+				</form>
 			</c:when>
 			<c:otherwise>
-				<h4>No Game found by that ID</h4>
+				<h4>No Game found by that ID - go back the Main Menu and try
+					again</h4>
 			</c:otherwise>
 		</c:choose>
 	</div>

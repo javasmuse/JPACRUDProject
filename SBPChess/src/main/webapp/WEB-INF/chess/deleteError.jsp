@@ -9,10 +9,9 @@
 </head>
 <body>
 	<h3>
-		<a href="/">Back to the Home Page</a>
+		<a href="/">Main Menu</a>
 	</h3>
 	<h2>Sorry your game was not deleted</h2>
 	<h3>Please go back and try again</h3>
-
 </body>
 </html>

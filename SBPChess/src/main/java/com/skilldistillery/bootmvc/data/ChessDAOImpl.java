@@ -17,7 +17,6 @@ public class ChessDAOImpl implements ChessDAO {
 	@PersistenceContext
 	private EntityManager em; // never close this!
 
-
 	@Override
 	public Chess findById(int id) { // find all games by id
 		return em.find(Chess.class, id);
@@ -48,12 +47,12 @@ public class ChessDAOImpl implements ChessDAO {
 		return changedChess;
 	}
 
-	public boolean destroy(int id) {   // delete a game
+	public boolean destroy(int id) { // delete a game
 		Chess chee = em.find(Chess.class, id);
 		try {
 			em.remove(chee);
 		} catch (Exception e) {
-			return false; 
+			return false;
 		}
 		em.flush();
 		boolean status = false;
@@ -61,8 +60,5 @@ public class ChessDAOImpl implements ChessDAO {
 		em.close();
 		return !status;
 	}
-
-
-
 
 }
