@@ -13,7 +13,7 @@
 	</h3>
 	Chess Game ID
 	<form action="updateGameP1.do" method="GET">
-		Game ID: <input type="text" name="cid" /> <input type="submit"
+		Game ID: <input type="number" name="cid" /> <input type="submit"
 			value="Show Game" />
 	</form>
 	<a href="updateGameP1.do?cid=${chessdb.id}">${chessdb.player}</a>
