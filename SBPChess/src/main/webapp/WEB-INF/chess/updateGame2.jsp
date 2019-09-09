@@ -30,13 +30,12 @@
 				<ul>
 
 					<form action="updateGameP2.do" method="POST">
+						<input type="hidden" name="cid" value="${chess.id }">
 						<br> <input type="text" name="player" value="${chess.player}">
 						<input type="text" name="opponent" value="${chess.opponent}">
 						<input type="text" name="playerColor" value="${chess.playerColor}">
 						<input type="text" name="outcome" value="${chess.outcome}">
 						<input type="text" name="location" value="${chess.location}">
-						<br> Verify Game ID: <input type="text"
-							name="cid" />
 							<input type="submit" value="Submit" />
 					</form>
 		</c:when>
