@@ -35,8 +35,9 @@
 						<input type="text" name="playerColor" value="${chess.playerColor}">
 						<input type="text" name="outcome" value="${chess.outcome}">
 						<input type="text" name="location" value="${chess.location}">
-						<!-- <br> Verify Game ID (not changeable): <input type="text"
-							name="cid" /> <input type="submit" value="Submit" /> -->
+						<br> Verify Game ID: <input type="text"
+							name="cid" />
+							<input type="submit" value="Submit" />
 					</form>
 		</c:when>
 		<c:otherwise>
