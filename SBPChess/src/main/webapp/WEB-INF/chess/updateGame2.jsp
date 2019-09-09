@@ -21,8 +21,8 @@
 				<li>Player: ${chess.player}</li>
 				<li>Opponent: ${chess.opponent}</li>
 				<li>Player Color: ${chess.playerColor}</li>
-				<li>Location: ${chess.location}</li>
 				<li>Outcome: ${chess.outcome}</li>
+				<li>Location: ${chess.location}</li>
 			</ul>
 
 			<div>
@@ -33,10 +33,10 @@
 						<br> <input type="text" name="player" value="${chess.player}">
 						<input type="text" name="opponent" value="${chess.opponent}">
 						<input type="text" name="playerColor" value="${chess.playerColor}">
-						<input type="text" name="outcome" value="${chess.location}">
-						<input type="text" name="location" value="${chess.outcome}">
-						<br> Verify Game ID (not changeable): <input type="text"
-							name="cid" /> <input type="submit" value="Submit" />
+						<input type="text" name="outcome" value="${chess.outcome}">
+						<input type="text" name="location" value="${chess.location}">
+						<!-- <br> Verify Game ID (not changeable): <input type="text"
+							name="cid" /> <input type="submit" value="Submit" /> -->
 					</form>
 		</c:when>
 		<c:otherwise>

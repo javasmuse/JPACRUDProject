@@ -22,8 +22,8 @@
 					<li>Player:..........${chess.player}</li>
 					<li>Opponent:........${chess.opponent}</li>
 					<li>Player's Color:..${chess.playerColor}</li>
-					<li>Location:........${chess.location}</li>
 					<li>Outcome:.........${chess.outcome}</li>
+					<li>Location:........${chess.location}</li>
 				</ul>
 
 
